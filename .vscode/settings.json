@@ -174,7 +174,7 @@
     "code-runner.runInTerminal": true,
     "python.pythonPath": "C:\\Users\\Anurag\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
     "C_Cpp.errorSquiggles": "Enabled",
-    "workbench.colorTheme": "Purply (Light)",
+    "workbench.colorTheme": "Purply (Dark)",
     // The Cursive font is operator Mono, it's $200 and you need to buy it to get the cursive
     "editor.fontFamily": "Operator Mono, Fira Code iScript, Monaco, 'Courier New', monospace",
     "editor.fontSize": 16,
