@@ -5,48 +5,36 @@
 using namespace std;
 
 int main(){
-    int T;
+    long long int T;
     cin >> T;
 
     while(T--){
-        int N;
+        long long int N;
         cin >> N;
 
-        int A[N], temp=0;
+        long long int A[N], ev_sum=0, odd_sum=0, max_num=0;
         for(int i=0; i<N; i++){
-            cin >>A[i];
-            if(A[i] > temp){
-                temp = A[i];
+            cin >> A[i];
+            if(i%2==0){
+                ev_sum+=A[i];
+                if(A[i]>max_num){
+                    max_num = A[i];
+                }
+            }
+            else{
+                odd_sum+=A[i];
+                if(A[i]>max_num){
+                    max_num = A[i];
+                }
             }
         }
 
-        for(int j=0; j<N; j+=2){
-            //cout << "\n loop for " << j << " started" << endl;
-            int sum=A[j];
-            for(int k=j+2; k<N; k+=2){
-                //cout << A[k] << endl;
-                sum+=A[k];
-                //cout << "sum is " << sum;
-                if(sum>temp){
-                    //cout << "\ngreater than\n";
-                    temp=sum;
-                }
-            }
+        if(max(ev_sum, odd_sum)<max_num){
+            cout << max_num << endl;
         }
-        for(int j=1; j<N; j+=2){
-            //cout << "\n loop for " << j << " started" << endl;
-            int sum=A[j];
-            for(int k=j+2; k<N; k+=2){
-                //cout << A[k] << endl;
-                sum+=A[k];
-                //cout << "sum is " << sum;
-                if(sum>temp){
-                    //cout << "\ngreater than\n";
-                    temp=sum;
-                }
-            }
+        else{
+            cout << max(ev_sum, odd_sum) << endl;
         }
-        cout << temp;
     }
     return 0;
 }
