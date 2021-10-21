@@ -5,20 +5,25 @@
 for _ in range(int(input())):
     X, Y = map(int, input().split())
 
-    diff = abs(X-Y)
+    diff = Y-X
     #print(diff)
-
     k=0
     moonwalk=0
     slide=0
-    while(True):
-        if(k<diff):
-            k+=2
-            moonwalk+=1
-        elif(k>diff):
-            k-=1
+    if(diff>0):
+        while(True):
+            if(k<diff):
+                k+=2
+                moonwalk+=1
+            elif(k>diff):
+                k-=1
+                slide+=1
+            elif(k==diff):
+                break
+
+    elif(diff<0):
+        while(diff!=0):
+            diff+=1
             slide+=1
-        elif(k==diff):
-            break
 
     print(moonwalk + slide)
